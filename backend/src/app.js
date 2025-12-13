@@ -3,8 +3,13 @@ const express= require('express');
 const cookieParser = require('cookie-parser');
 const authRoutes= require('./routes/authRoutes');
 const fooditemRoutes= require('./routes/fooditemRoutes');
+const cors= require('cors');
 
 const app= express();
+app.use(cors({
+    origin: 'http://localhost:5173', //frontend url
+    credentials: true, //to allow cookies to be sent
+}));
 app.use(cookieParser());
 app.use(express.json()); //middleware to enable getting data in req.body (coming from frontend)
 

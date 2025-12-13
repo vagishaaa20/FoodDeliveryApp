@@ -13,6 +13,11 @@ const foodpartnerSchema = new mongoose.Schema({
     password:{
         type: String,
         required:true
+    },
+    license:{
+        type: String,
+        required:true,
+        unique:true
     }
 })
 
