@@ -15,7 +15,7 @@ app.get("/", (req,res)=>{
 })
 
 //after requiring authroutes we need to use it as middleware
-app.use('/api/auth', authRoutes);  //authentication related api
+app.use('/api/auth', authRoutes);  //authentication related api , mounted router here
 app.use('/api/fooditems', fooditemRoutes); //fooditem related api
 
 module.exports = app;

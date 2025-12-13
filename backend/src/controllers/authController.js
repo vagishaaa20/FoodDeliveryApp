@@ -106,6 +106,8 @@ async function registerFoodPartner(req,res){
         id: foodpartner._id,
     },process.env.JWT_SECRET);
 
+    res.cookie("token",token)
+
     res.status(201).json({
         message: "Food Partner registered successfully",
         foodpartner:{
