@@ -2,6 +2,7 @@
 const express= require('express');
 const cookieParser = require('cookie-parser');
 const authRoutes= require('./routes/authRoutes');
+const foodPartnerRoutes= require('./routes/food-partner.routes');
 const fooditemRoutes= require('./routes/fooditemRoutes');
 const cors= require('cors');
 
@@ -22,5 +23,6 @@ app.get("/", (req,res)=>{
 //after requiring authroutes we need to use it as middleware
 app.use('/api/auth', authRoutes);  //authentication related api , mounted router here
 app.use('/api/fooditems', fooditemRoutes); //fooditem related api
+app.use('/api/food-partner', foodPartnerRoutes); //foodpartner related api
 
 module.exports = app;
